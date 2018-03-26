@@ -1,5 +1,9 @@
 body {
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Poppins', 'sans-serif';
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
 }
 
 header {
@@ -14,11 +18,45 @@ header {
     z-index: 10;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 90%;
-    padding-bottom: 40px;
+.ofhidden {
+    overflow: hidden;
+}
+
+.section-gap {
+    padding: 120px 0;
+}
+
+.btn {
+    text-decoration: none;
+    font: 'Lato','sans-serif';
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 10px 40px;
+    border-radius: 50px;
+}
+
+.btnsquare {
+    text-decoration: none;
+    font: 'Lato','sans-serif';
+    font-size: 14px;
+    border: 1px solid transparent;
+    padding: 10px 40px;
+}
+
+.btn--primary {
+    color: white;
+    background-color: dimgray;
+}
+
+.icon {
+    display: inline-block;
+    width: 3em;
+    height: 5em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
 }
 
 .header__wrapper {
@@ -32,7 +70,6 @@ header {
     display: flex;
     margin: 0;
 }
-
 
 .nav__item {
     list-style: none;
@@ -60,41 +97,24 @@ header {
 
 .product {
     padding-top: 200px;
-    position: relative;
-}
-
-.product__wrapper {
-    display: flex;
-    justify-content: space-around;
+    padding-bottom: 120px;
     position: relative;
 }
 
 .product__desc {
+    text-align: center;
+}
 
+.product__desc-title {
+    text-transform: uppercase;
+    font-size: 72px;
+    font-weight: 700;
+    margin: 0;
 }
 
 .product__desc-text {
-    width: 300px;
-}
-
-.product__desc-item {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-}
-
-.product__skills {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #000;
-    padding: 10px;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-.skills__desc {
-    display: inline-block;
-    margin-left: 20px;
+    padding: 20px 0;
+    margin: 0 0 20px 0;
 }
 
 .product__img {
@@ -105,46 +125,178 @@ header {
     position: absolute;
     bottom: 0;
     right: 150px;
+    width: 60%;
 }
 
 .product__img--vertical {
-
+    float: right;
+    width: 50%;
 }
 
-.merch {
-    background-color: mediumseagreen;
+.about {
+    background-color: lightgrey;
 }
 
-.merch__wrapper {
+.about-img {
+    height: 100%;
+}
+
+.about-text[class^="col"] {
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 20px 40px 20px 0;
+    margin-top: 60px;
+    margin-left: 0;
+    position: relative;
+    box-shadow: 0px 0px 50px 0px rgba(157, 157, 157, 0.3);
+}
+
+.about-text::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0;
+    z-index: 2;
+    background: white;
+    background-color: #fff;
+    width: 70px;
+    height: 100%;
+    box-shadow: -35.355px 35.355px 50px 0px rgba(157, 157, 157, 0.3);
+}
+
+.features {
+    background: url(../img/melancia.jpg) center;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.features__text {
+    color: white;
+    text-align: center;
+}
+
+.features__text--title {
+    font-family: 'Lato','sans-serif';
+    font-size: 36px;
+}
+
+.features__text--subtitle {
+    
+}
+
+.counter-wrapper {
+    margin-top: -100px;
+    margin-bottom: 120px;
+    box-sizing: border-box;
+}
+
+.single-counter {
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    padding: 40px 15px;
+    box-shadow: 0px 10px 5px 0px rgba(245, 63, 81, 0.3);
+}
+
+.counter {
+    font-size: 60px;
+    font-weight: 400;
+    color: #f53f51;
+}
+
+.benefits {
+    
+}
+
+.benefits__title {
+    font-family: 'Lato','sans-serif';
+    font-size: 36px;
+    text-align: center;
+}
+
+.benefits__subtitle {
+    text-align: center;
+}
+
+.benefits-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.benefits__img {
+    margin: 0 0 40px 0;
+    width: 100%;
+}
+
+.benefits__text {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.benefits__desc {
+    font-size: 14px;
+    color: #777777;
+}
+
+.app {
+    background-color: lightgrey;
+    text-align: center;
+}
+
+.btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.merch__text {
+.btn-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+    box-sizing: border-box;
+    margin: 40px 20px 0 20px;
+}
+
+.team {
     text-align: center;
-    font-family: 'Lato', 'sans-serif';
-    font-size: 18px;
-    padding-top: 40px;
 }
 
-.restaurante {
-    width: 250px;
-    height: 250px;
-    border: 1px solid #000;
-    margin: 60px 20px 0 20px;
+.margin-team {
+    padding: 0 150px;
+    box-sizing: border-box;
 }
 
-.mercado {
-    width: 250px;
-    height: 250px;
-    border: 1px solid #000;
-    margin: 60px 20px 0 20px;
+.team-box {
+    
 }
 
-.feira {
-    width: 250px;
-    height: 250px;
-    border: 1px solid #000;
-    margin: 60px 20px 0 20px;
+.single-team {
+    padding: 30px;
+    text-align: center;
+}
+
+.team-desc {
+    padding: 30px 0;
+    font-size: 14px;
+    color: #777777;
+}
+
+.team-job {
+    font-size: 14px;
+    color: #777777;
+}
+
+.footer-area {
+    background-color: #222222;
 }
