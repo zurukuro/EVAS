@@ -368,7 +368,6 @@ header {
     padding-top: 200px;
     padding-bottom: 90px;
     position: relative;
-    background-image: url("../img/upfeathers.png");
 }
 
 .img__wrapper::before {
@@ -376,9 +375,9 @@ header {
     display: block;
     width: 350px;
     height: 40px;
-    border-top: 1px solid white;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    border-top: 1px solid #5A1E5C;
+    border-left: 1px solid #5A1E5C;
+    border-right: 1px solid #5A1E5C;
 }
 
 .store__img {
@@ -391,14 +390,14 @@ header {
     display: block;
     width: 350px;
     height: 40px;
-    border-bottom: 1px solid white;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    border-bottom: 1px solid #5A1E5C;
+    border-left: 1px solid #5A1E5C;
+    border-right: 1px solid #5A1E5C;
 }
 
 .store__desc {
     text-align: center;
-    color: #ddd;
+    color: black;
 }
 
 .store__title {
@@ -406,7 +405,7 @@ header {
     font-size: 36px;
     font-weight: 700;
     margin: 0;
-    color: #fee101;
+    color: #5A1E5C;
 }
 
 .store__text {
