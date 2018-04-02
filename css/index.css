@@ -13,8 +13,8 @@ header {
     width: 100%;
     height: 50px;
     padding-top: 17px;
-    border-bottom: 1px solid #eee;
-    background-color: #fff;
+    border-bottom: 1px solid #7f2982;
+    background-color: #5A1E5C;
     z-index: 10;
 }
 
@@ -46,8 +46,27 @@ header {
 }
 
 .btn--primary {
+    color: #5A1E5C;
+    background-color: white;
+    border: 2px solid #5A1E5C;
+    transition: all 0.2s ease-out;
+}
+
+.btn--primary:hover {
+    background-color: #5A1E5C;
     color: white;
-    background-color: dimgray;
+    transition: all 0.1s ease-out;
+}
+
+.btn--secondary {
+    color: white;
+    background-color: #7f2982;
+    transition: all 0.1s ease-out;
+}
+
+.btn--secondary:hover {
+    background-color: #5A1E5C;
+    transition: all 0.1s ease-out;
 }
 
 .icon {
@@ -75,23 +94,23 @@ header {
     list-style: none;
     padding: .5em;
     border: 1px solid transparent;
+    transition: all 0.2s ease-out;
 }
 
 .nav__item--column {
-    border-right: 1px solid #eee;
-    border-left: 1px solid #eee;
+    border-right: 1px solid #7f2982;
+    border-left: 1px solid #7f2982;
 }
 
 .nav__item:hover {
-    border-color: #eee;
-    background-color: #eee; 
+    border-color: #7f2982;
+    background-color: #7f2982;
+    transition: all 0.2s ease-out;
 }
 
 .nav__link {
     text-decoration: none;
-    color: black;
-    font-family: 'Lato';
-    font-weight: 900;
+    color: white;
     padding: .5em 2em;
 }
 
@@ -110,6 +129,7 @@ header {
     font-size: 72px;
     font-weight: 700;
     margin: 0;
+    color: #5A1E5C;
 }
 
 .product__desc-text {
@@ -144,7 +164,7 @@ header {
 .about-text[class^="col"] {
     background-color: #fff;
     box-sizing: border-box;
-    padding: 20px 40px 20px 0;
+    padding: 40px 40px 40px 0;
     margin-top: 60px;
     margin-left: 0;
     position: relative;
@@ -227,9 +247,14 @@ header {
     text-align: center;
 }
 
-.benefits-column {
-    display: flex;
-    flex-direction: column;
+.row-center {
+    text-align: center;
+}
+
+.row-center  [class^="col"] {
+    display: inline-block;
+    float: none;
+    margin: 0 40px;
 }
 
 .benefits__img {
@@ -300,3 +325,159 @@ header {
 .footer-area {
     background-color: #222222;
 }
+
+.footer__title {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.footer__text {
+    color: #777777;
+}
+
+.footer__margin {
+    margin-bottom: 30px;
+}
+
+.footer__color {
+    color: #fee101;
+    text-decoration: none;
+}
+
+.icon-footer {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    stroke-width: 0;
+    stroke: #fee101;
+    fill: #fee101;
+    margin: 20px 5px;
+    /* color: #5A1E5C; */
+    /* color: #4D1B50; */
+    /* color: #fee101; */
+}
+
+.icon-link {
+    text-decoration: none;
+}
+
+/* Loja.html */
+
+.store {
+    padding-top: 200px;
+    padding-bottom: 90px;
+    position: relative;
+    background-image: url("../img/upfeathers.png");
+}
+
+.img__wrapper::before {
+    content: "";
+    display: block;
+    width: 350px;
+    height: 40px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.store__img {
+    width: 60%;
+    margin-left: 30px;
+}
+
+.img__wrapper::after {
+    content: "";
+    display: block;
+    width: 350px;
+    height: 40px;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.store__desc {
+    text-align: center;
+    color: #ddd;
+}
+
+.store__title {
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    color: #fee101;
+}
+
+.store__text {
+    padding: 20px 0;
+    margin: 0 0 20px 0;
+}
+
+/* Ajuda */
+
+.faq {
+    padding-top: 200px;
+    padding-bottom: 90px;
+    position: relative;
+}
+
+.faq__desc {
+    color: black;
+}
+
+.faq__title {
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    color: #5A1E5C;
+    margin-bottom: 40px;
+}
+
+.faq__item {
+    text-align: left;
+    outline: 0;
+    padding: 10px;
+}
+
+.faq__item:focus .faq__item-text {
+    height: 100px;
+    transition: all 0.5s ease-in-out;
+}
+
+.faq__item-title {
+    padding-bottom: 5px;
+    font-weight: normal;
+}
+
+.faq__item-text {
+    height: 0;
+    overflow-y: scroll;
+    transition: all 0.5s ease-in-out;
+    outline: 0;
+    color: #777777;
+}
+
+.faq-icon {
+    text-align: center;
+}
+
+.icon-ajuda {
+    display: block;
+    width: 12em;
+    height: 100%;
+    margin: auto;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: #ddd;
+}
+
+/* Login */
+
+.login {
+    padding-top: 200px;
+    padding-bottom: 90px;
+    position: relative;
+}
+
