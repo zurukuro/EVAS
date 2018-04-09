@@ -9,14 +9,21 @@ p, h1, h2, h3, h4, h5, h6 {
 
 header {
   display: block;
-  position: fixed;
   top: 0;
   width: 100%;
   height: 50px;
   padding-top: 17px;
-  /* border-bottom: 1px solid #eee; */
   background-color: transparent;
   z-index: 10;
+  position: absolute;
+  transition: all 0.1s ease-out;
+}
+
+.not-transparent {
+  position: fixed;
+  background-color: #4b4b4b;
+  transition: all 0.1s ease-out;
+  border-bottom: 1px solid #eee;
 }
 
 .ofhidden {
