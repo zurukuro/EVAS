@@ -15,22 +15,18 @@
                     <div class="row row-center">
                         <div class="col-4">
                             <h3>Login</h3>
-                            <form action="" method="post" name="form" class="">
-                                <label for="nome">Nome</label>
-                                <input id="nome" name="nome" type="text">
-                                <label for="email">Email</label>
-                                <input id="email" name="email" type="text">
-                                <label for="telefone">Telefone</label>
-                                <input id="telefone" name="telefone" type="text">
-                    
-                                <button id="enviar" name="enviar" type="submit" class="btn btn--secondary">Enviar</button>
-                            </form>
+                            <form action="enviar.php" method="post" name="form" class="form">
+                                    <div>
+                                        <input type="text" id="username" name="username" class="input" placeholder="Nome de Usuário">
+                                    </div>
+    
+                                    <div>
+                                        <input type="text" id="password" name="password" class="input" placeholder="Senha">
+                                    </div>
+                                </form>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="section-gap">
-                <span class="temp">20ºC</span>
             </section>
         </main>
         <footer class="footer-area section-gap">
