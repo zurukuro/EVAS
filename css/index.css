@@ -1,3 +1,6 @@
+/* -------------------- Default -------------------- */
+
+
 body {
   font-family: 'Open Sans', 'sans-serif';
   color: #102e4a;
@@ -13,7 +16,8 @@ header {
   width: 100%;
   height: 50px;
   padding-top: 17px;
-  background-color: transparent;
+  /* background-color: transparent; */
+  background-color: #4b4b4b;
   z-index: 10;
   position: absolute;
   transition: all 0.1s ease-out;
@@ -28,6 +32,24 @@ header {
 
 .ofhidden {
   overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.overlay-light {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .left {
@@ -107,6 +129,10 @@ header {
   transition: all 0.1s ease-out;
 }
 
+
+/* -------------------- Header -------------------- */
+
+
 .icon {
   display: inline-block;
   width: 3em;
@@ -183,6 +209,8 @@ header {
   transition: all 0.1s ease-out;
 }
 
+/* -------------------- Index -------------------- */
+
 .front-about {
   position: relative;
   background-image: url('../img/front-img.jpg');
@@ -220,45 +248,6 @@ header {
   width: 80%;   
 }
 
-.product {
-  padding-top: 200px;
-  padding-bottom: 120px;
-  position: relative;
-}
-
-.product__desc {
-  text-align: center;
-}
-
-.product__desc-title {
-  text-transform: uppercase;
-  font-size: 72px;
-  font-weight: 700;
-  margin: 0;
-  color: #5A1E5C;
-}
-
-.product__desc-text {
-  padding: 20px 0;
-  margin: 0 0 20px 0;
-}
-
-.product__img {
-  position: relative;
-}
-
-.product__img--horizontal {
-  position: absolute;
-  bottom: 0;
-  right: 150px;
-  width: 60%;
-}
-
-.product__img--vertical {
-  float: right;
-  width: 80%;
-}
-
 .service {
   background-color: white;
 }
@@ -273,7 +262,6 @@ header {
 }
 
 .service__title {
-  text-transform: uppercase;
   text-align: center;
   font-size: 36px;
   font-weight: 700;
@@ -287,50 +275,10 @@ header {
   margin: 0 0 20px 0;
 }
 
-.about {
-  background-color: lightgrey;
-}
-
-.about-img {
-  height: 100%;
-}
-
-.about-text[class^="col"] {
-  background-color: #fff;
-  box-sizing: border-box;
-  padding: 40px 40px 40px 0;
-  margin-top: 60px;
-  margin-left: 0;
-  position: relative;
-  box-shadow: 0px 0px 50px 0px rgba(157, 157, 157, 0.3);
-}
-
-.about-text::before {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 0;
-  z-index: 2;
-  background: white;
-  background-color: #fff;
-  width: 70px;
-  height: 100%;
-  box-shadow: -35.355px 35.355px 50px 0px rgba(157, 157, 157, 0.3);
-}
-
 .features {
   background: url('../img/melancia.jpg') center;
   background-size: cover;
   position: relative;
-}
-
-.overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
 }
 
 .features__text {
@@ -366,7 +314,6 @@ header {
   font-weight: 400;
   color: #043565;
 }
-
 
 .clients {
   padding: 0 0 120px 0;
@@ -410,131 +357,46 @@ header {
   padding: 20px 0;
 }
 
-.benefits {
-  
+/* -------------------- FruTech -------------------- */
+
+.frutech {
+  position: relative;
+  background-image: url('../img/frutech-img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
-.benefits__title {
-  font-family: 'Lato','sans-serif';
-  font-size: 36px;
+.frutech__desc {
   text-align: center;
+  padding-top: 190px;
 }
 
-.benefits__subtitle {
-  text-align: center;
-}
-
-.benefits__img {
-  margin: 0 0 40px 0;
-  width: 100%;
-}
-
-.benefits__text {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.benefits__desc {
-  font-size: 14px;
-  color: #777777;
-}
-
-.app {
-  background-color: lightgrey;
-  text-align: center;
-}
-
-.btn-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
-  box-sizing: border-box;
-  margin: 40px 20px 0 20px;
-}
-
-.team {
-  text-align: center;
-}
-
-.margin-team {
-  padding: 0 150px;
-  box-sizing: border-box;
-}
-
-.team-box {
-  
-}
-
-.single-team {
-  padding: 30px;
-  text-align: center;
-}
-
-.team-desc {
-  padding: 30px 0;
-  font-size: 14px;
-  color: #777777;
-}
-
-.team-job {
-  font-size: 14px;
-  color: #777777;
-}
-
-.footer-area {
-  background-color: #222222;
-}
-
-.footer__title {
-  color: white;
-  font-size: 18px;
-  margin-bottom: 25px;
-}
-
-.footer__text {
-  color: #777777;
-}
-
-.footer__margin {
-  margin-bottom: 30px;
-}
-
-.footer__color {
+.frutech__title {
+  text-transform: uppercase;
+  font-size: 72px;
+  font-weight: 700;
   color: #ffa630;
-  text-decoration: none;
 }
 
-.icon-footer {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  stroke-width: 0;
-  stroke: #ffa630;
-  fill: #ffa630;
-  margin: 20px 5px;
-  /* color: #5A1E5C; */
-  /* color: #4D1B50; */
-  /* color: #fee101; */
+.frutech__text {
+  margin: 20px 0;
+  padding: 20px 80px;
+  color: white;
 }
-
-.icon-link {
-  text-decoration: none;
-}
-
-/* Loja.html */
 
 .store {
-  padding-top: 200px;
-  padding-bottom: 90px;
-  position: relative;
+  background-image: url('../img/dust_scratches.png');
+}
+
+.store__title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffa630;
+  margin-bottom: 60px;
 }
 
 .img__wrapper::before {
@@ -567,20 +429,211 @@ header {
   color: black;
 }
 
-.store__title {
-  text-transform: uppercase;
-  font-size: 36px;
-  font-weight: 700;
-  margin: 0;
-  color: #5A1E5C;
-}
-
 .store__text {
   padding: 20px 0;
   margin: 0 0 20px 0;
 }
 
-/* Ajuda */
+.benefits {
+  
+}
+
+.benefits__title {
+  font-size: 36px;
+  text-align: center;
+  color: #ffa630;
+}
+
+.benefits__subtitle {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.benefits__salad {
+  background-image: url('../img/salad.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0 0 40px 0;
+  width: 400px;
+  height: 412px;
+}
+
+.benefits__tomatoes {
+  background-image: url('../img/tomatoes.jpg');
+  background-size: cover;
+  margin: 0 0 40px 0;
+  width: 400px;
+  height: 412px;
+}
+
+.benefits__text {
+  color: #043565;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.benefits__desc {
+  font-size: 14px;
+  color: #102e4a;
+}
+
+.app {
+  background-image: url('../img/dust_scratches.png');
+  text-align: center;
+}
+
+.app__title {
+  color: #ffa630;
+  margin-bottom: 20px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+  box-sizing: border-box;
+  margin: 40px 20px 0 20px;
+}
+
+/* -------------------- Sobre nós -------------------- */
+
+.aboutus {
+  background-image: url('../img/dust_scratches.png');
+  min-height: 100vh;
+}
+
+.aboutus__desc {
+  text-align: center;
+  padding-top: 190px;
+}
+
+.aboutus__title {
+  text-transform: uppercase;
+  font-size: 72px;
+  font-weight: 700;
+  color: #ffa630;
+}
+
+.aboutus__text {
+  margin-top: 20px;
+  padding: 20px 80px;
+  color: #102e4a;
+  border-right: 1px solid rgb(204, 204, 204);
+  border-left: 1px solid rgb(204, 204, 204);
+}
+
+.team {
+  text-align: center;
+}
+
+.margin-team {
+  padding: 0 150px;
+  box-sizing: border-box;
+}
+
+.team-box {
+  
+}
+
+.single-team {
+  padding: 30px;
+  text-align: center;
+}
+
+.team-desc {
+  padding: 30px 0;
+  font-size: 14px;
+  color: #777777;
+}
+
+.team-job {
+  font-size: 14px;
+  color: #777777;
+}
+
+/* -------------------- Contato -------------------- */
+
+.contactus {
+  position: relative;
+  min-height: 100vh;
+}
+
+.contactus__desc {
+  text-align: center;
+  padding-top: 190px;
+}
+
+.contactus__title {
+  text-transform: uppercase;
+  font-size: 72px;
+  font-weight: 700;
+  color: #ffa630;
+}
+
+.contactus__text {
+  margin: 20px 0;
+  padding: 20px 80px;
+  color: #102e4a;
+}
+
+.form {
+  margin: 60px 0 120px 0;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #ffa630;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: none;
+  padding: 14px 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  outline: none;
+  font-size: 14px;
+  color: #3b3b3b;
+}
+
+.input placeholder {
+  display: block;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 4px;
+  color: #3b3b3b;
+  text-align: center;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #ffa630;
+  background: none;
+  padding: 14px 10px;
+  margin-bottom: 40px;
+  outline: none;
+  font-size: 14px;
+  color: #3b3b3b;
+  resize: none;
+  /* overflow-y: scroll !important; */
+  max-height: 100% !important;
+
+}
+
+/* -------------------- Ajuda -------------------- */
 
 .faq {
   padding-top: 200px;
@@ -639,7 +692,7 @@ header {
   fill: #ddd;
 }
 
-/* Login */
+/* -------------------- Login -------------------- */
 
 .login {
   padding-top: 200px;
@@ -654,4 +707,46 @@ header {
   font-size: 20px;
   color: white;
   background-color: cadetblue;
+}
+
+/* -------------------- Footer -------------------- */
+
+.footer-area {
+  background-color: #222222;
+}
+
+.footer__title {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.footer__text {
+  color: #777777;
+}
+
+.footer__margin {
+  margin-bottom: 30px;
+}
+
+.footer__color {
+  color: #ffa630;
+  text-decoration: none;
+}
+
+.icon-footer {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  stroke-width: 0;
+  stroke: #ffa630;
+  fill: #ffa630;
+  margin: 20px 5px;
+  /* color: #5A1E5C; */
+  /* color: #4D1B50; */
+  /* color: #fee101; */
+}
+
+.icon-link {
+  text-decoration: none;
 }
