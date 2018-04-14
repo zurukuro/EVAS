@@ -693,11 +693,75 @@ header {
 }
 
 /* -------------------- Login -------------------- */
+.login__background {
+  background-image: url('../img/congruent_outline.png');
+  height: 100%;
+}
+
+.login__logo {
+  display: inline-flex;
+  background-image: url('../img/logo.png');
+  background-size: cover;
+  width: 78px;
+  height: 33px;
+  margin: 30px 0 20px 0;
+}
 
 .login {
-  padding-top: 200px;
-  padding-bottom: 90px;
   position: relative;
+}
+
+.login__holder {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  padding: 40px;
+  background-color: white;
+}
+
+.forgetpass {
+  font-size: 12px;
+  text-align: left;
+  margin: 20px 0 40px 0;
+}
+
+.forgetpass__link {
+  text-decoration: none;
+  color: #ffa630;
+  font-weight: bold;
+}
+
+.form-login {
+  margin: 60px 0 50px 0;
+}
+
+.login__text {
+  margin: 0 0 20px 0;
+}
+
+/* -------------------- Cadastre-se -------------------- */
+
+.cadastro {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.cadastro__holder {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  padding: 40px;
+  background-color: white;
+}
+
+.cadastro__background {
+  background-image: url('../img/congruent_outline.png');
+}
+
+.news {
+  font-size: 12px;
+  margin: 20px 0 40px 0;
+  text-align: left;
+}
+
+.form-cadastro {
+  margin: 60px 0 20px 0;
 }
 
 /* -------------------- Footer -------------------- */
