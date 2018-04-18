@@ -1,0 +1,14 @@
+{
+  "name": "evas",
+  "version": "0.5",
+  "description": "Simple college project",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.6.1"
+  }
+}
