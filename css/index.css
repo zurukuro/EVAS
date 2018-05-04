@@ -129,6 +129,11 @@ header {
   transition: all 0.1s ease-out;
 }
 
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 
 /* -------------------- Header -------------------- */
 
@@ -555,6 +560,7 @@ header {
 }
 
 .team-job {
+  margin-top: 5px;
   font-size: 14px;
   color: #777777;
 }
@@ -709,7 +715,81 @@ header {
 
 .profile {
   position: relative;
-  min-height: 100vh;
+}
+
+.profile-gap {
+    padding-top: 180px;
+}
+
+.profile-itens {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-itens__icons {
+  width: 22%;
+}
+
+.profile-itens__icons img {
+  max-width: 100%;
+}
+
+.plus-holder {
+  display: flex;
+  align-items: center;
+  border: 3px solid #222222;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+}
+
+.plus-holder:hover {
+  background-color: #222222;
+  transition: all 0.1s ease-out;
+}
+
+.plus {
+  margin: 0 auto;
+  color: #222222;
+  font-size: 36px;
+  transition: all 0.1s ease-out;
+}
+
+.plus-holder:hover .plus {
+  color: white;
+  font-size: 72px;
+  transition: all 0.3s ease-out;
+}
+
+.profile-stats {
+  
+}
+
+.therm-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  border: 3px solid #222222;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.therm {
+  align-self: center;
+  width: 100%;
+  font-size: 48px;
 }
 
 /* -------------------- Footer -------------------- */
