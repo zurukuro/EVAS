@@ -16,10 +16,21 @@ header {
   width: 100%;
   height: 50px;
   padding-top: 17px;
-  /* background-color: transparent; */
-  background-color: #4b4b4b;
+  background-color: transparent;
   z-index: 10;
   position: absolute;
+  transition: all 0.1s ease-out;
+}
+
+.header {
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  padding-top: 17px;
+  background-color: #4b4b4b;
+  z-index: 10;
+  position: fixed;
   transition: all 0.1s ease-out;
 }
 
@@ -32,6 +43,10 @@ header {
 
 .ofhidden {
   overflow: hidden;
+}
+
+.row [class^="col"].hidden {
+  display: none;
 }
 
 .overlay {
@@ -715,10 +730,11 @@ canvas {
 
 .profile {
   position: relative;
+  background-image: url('../img/dust_scratches.png');
 }
 
 .profile-gap {
-    padding-top: 180px;
+    padding: 180px 0;
 }
 
 .profile-itens {
@@ -733,6 +749,10 @@ canvas {
 
 .profile-itens__icons img {
   max-width: 100%;
+}
+
+#arduino_details {
+  cursor: pointer;
 }
 
 .plus-holder {
@@ -769,27 +789,79 @@ canvas {
 }
 
 .therm-circle {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
-.circle {
+.show {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-wrap: wrap;
-  padding: 20px;
-  border: 3px solid #222222;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
 }
 
-.therm {
+.single-chart {
+  margin-bottom: 40px;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart.orange .circle {
+  stroke: #ff9f00;
+}
+
+.percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+
+#chart {
+  margin-top: 60px;
+}
+
+.media {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  height: 220px;
+  margin-top: 60px;
+}
+
+.square {
+  border: 1px solid #222222;
+  box-sizing: border-box;
+  width: 80px;
+  padding: 20px;
+  text-align: center;
+  margin: 5px auto;
+}
+
+.square-content {
+  text-align: center;
   align-self: center;
-  width: 100%;
-  font-size: 48px;
 }
 
 /* -------------------- Footer -------------------- */
@@ -832,4 +904,21 @@ canvas {
 
 .icon-link {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .front-about {
+    min-height: unset;
+  }
+
+  .row-center {
+    text-align: unset;
+  }
+  
+  .row-center  [class^="col"] {
+    float: left;
+    margin: 0.5rem 2%;
+    min-height: 0.125rem;
+  }
+  
 }

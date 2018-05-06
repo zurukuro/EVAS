@@ -16,7 +16,8 @@ class ArduinoDataRead {
         SerialPort.list().then(listSerialDevices => {
             
             let listArduinoSerial = listSerialDevices.filter(serialDevice => {
-                return serialDevice.vendorId == 2341 && serialDevice.productId == 43;
+                //return serialDevice.vendorId == 2341 && serialDevice.productId == 43;
+                return serialDevice.vendorId == '2A03' && serialDevice.productId == '0043';
             });
             
             if (listArduinoSerial.length != 1){
@@ -35,7 +36,7 @@ class ArduinoDataRead {
             arduino.pipe(parser);
             
             parser.on('data', (data) => {
-                inserirRegistro(data);
+                //inserirRegistro(data);
                 this.listData.push(parseFloat(data));
             });
             
@@ -49,31 +50,31 @@ serial.SetConnection();
 module.exports.ArduinoData = {List: serial.List} 
 
 var Connection = require('tedious').Connection;  
-    var config = {  
-        userName: 'Duffoux',  
-        password: 'Rick091295',  
-        server: 'zackariel.database.windows.net',  
-        // If you are on Microsoft Azure, you need this:  
-        options: {encrypt: true, database: 'Duffoux'}  
-    };  
-    var connection = new Connection(config);  
-    connection.on('connect', function(err) {  
-		if (err) {
-			console.error('Erro ao tentar conexão com banco '+err);
-		} else {
-			console.log("Conectado com o SQL Server");  
-		}
-    }); 
-	
-	
-	var Request = require('tedious').Request  
-    var TYPES = require('tedious').TYPES;  
+var config = {  
+    userName: 'Duffoux',  
+    password: 'Rick091295',  
+    server: 'zackariel.database.windows.net',  
+    // If you are on Microsoft Azure, you need this:  
+    options: {encrypt: true, database: 'Duffoux'}  
+};  
+var connection = new Connection(config);  
+connection.on('connect', function(err) {  
+    if (err) {
+        console.error('Erro ao tentar conexão com banco '+err);
+    } else {
+        console.log("Conectado com o SQL Server");  
+    }
+}); 
 
-    function inserirRegistro(valor) {  
-        request = new Request("INSERT into tblleitura (temperatura, datatemp) values (@valor, CURRENT_TIMESTAMP);", function(err) {  
-         if (err) {  
-            console.log(err);}  
-        });  
-        request.addParameter('valor', TYPES.Float, valor);  
-        connection.execSql(request);  
-    }  
+
+var Request = require('tedious').Request  
+var TYPES = require('tedious').TYPES;  
+
+function inserirRegistro(valor) {  
+    request = new Request("INSERT into tblleitura (temperatura, datatemp) values (@valor, CURRENT_TIMESTAMP);", function(err) {  
+    if (err) {  
+        console.log(err);}  
+    });  
+    request.addParameter('valor', TYPES.Float, valor);  
+    connection.execSql(request);  
+}

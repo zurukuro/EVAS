@@ -1,52 +1,106 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/simple-grid.css">
-        <link rel="stylesheet" href="css/index.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poiret+One" rel="stylesheet">
-    </head>
-    <body>
-        <header id="header">
-            <div class="header__wrapper">
-                <a href="index.html" class="logo"></a>
-                <nav class="nav">
-                    <ul class="nav__list">                        
-                        <li class="nav__item left">
-                            <a href="frutech.html" class="nav__link">FruTech</a>
-                        </li>
-                        <li class="nav__item  nav__item--column left">
-                            <a href="sobrenos.html" class="nav__link">Sobre nós</a>
-                        </li>
-                        <li class="nav__item left">
-                            <a href="contato.html" class="nav__link">Contato</a>
-                        </li>
-                    </ul>
-                    <div class="nav__item--login right">
-                        <a href="login.html" class="nav__login">Login</a>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <section class="profile">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 profile-gap profile-itens">
-                            <div class="profile-itens__icons">
-                                <img src="img/arduinoo.png" alt="">
-                            </div>
-                            <div class="plus-holder">
-                                <div class="plus">+</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="footer-area section-gap">
+<head>
+	<title>Perfil</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/simple-grid.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Open+Sans|Poiret+One|Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__wrapper">
+			<a href="index.html" class="logo"></a>
+			<nav class="nav">
+				<ul class="nav__list">                        
+					<li class="nav__item left">
+						<a href="frutech.html" class="nav__link">FruTech</a>
+					</li>
+					<li class="nav__item  nav__item--column left">
+						<a href="sobrenos.html" class="nav__link">Sobre nós</a>
+					</li>
+					<li class="nav__item left">
+						<a href="contato.html" class="nav__link">Contato</a>
+					</li>
+				</ul>
+				<div class="nav__item--login right">
+					<a href="login.html" class="nav__login">Login</a>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section class="profile">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 profile-gap profile-itens">
+						<div class="profile-itens__icons">
+						<a id="arduino_details"><img src="img/arduinoo.png" alt=""></a>
+						</div>
+						<div class="plus-holder">
+							<div class="plus">+</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section-gap therm-circle" id="arduino_stats">
+			<div class="container">
+				<div class="row row-center">
+					<div class="col-6">
+						<div class="single-chart">
+							<svg viewbox="0 0 36 36" class="circular-chart orange">
+								<path class="circle-bg"
+								d="M18 2.0845
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831"
+								/>
+								<path class="circle" id="temp-stroke"
+								stroke-dasharray="90, 100"
+								d="M18 2.0845
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831"
+								/>
+								<text x="14" y="20.35" class="percentage" id="temp">20</text>
+								<text x="23" y="20.35" class="percentage">ºC</text>
+							</svg>
+						</div>
+						<button type="button" id="details" class="btnsquare btn--terciary">Detalhes</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6 hidden" id="idhidden">
+						<canvas id="chart"></canvas>
+						<div id="chart_div"></div>
+					</div>
+					<div class="col-6 hidden" id="media_stats">
+						<div class="media">
+							<div class="square-content">
+								<p>1º Quartil</p>
+								<div class="square" id="temp_1quartil">15ºC</div>
+							</div>
+							<div class="square-content">
+								<p>3º Quartil</p>
+								<div class="square" id="temp_3quartil">20ºC</div>
+							</div>
+							<div class="square-content">
+								<p>Média</p>
+								<div class="square" id="temp_media">26ºC</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		
+	</main>
+	<footer class="footer-area section-gap">
             <div class="container">
                 <div class="row">
                     <div class="col-5">
@@ -96,9 +150,9 @@
                     </div>
                 </div>
             </div>
-        </footer>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+	</footer>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/profile.js"></script>
+</body>
 </html>
