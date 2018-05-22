@@ -16,8 +16,8 @@ class ArduinoDataRead {
         SerialPort.list().then(listSerialDevices => {
             
             let listArduinoSerial = listSerialDevices.filter(serialDevice => {
-                return serialDevice.vendorId == 2341 && serialDevice.productId == 43;
-                // return serialDevice.vendorId == '2A03' && serialDevice.productId == '0043';
+                //return serialDevice.vendorId == 2341 && serialDevice.productId == 43;
+                return serialDevice.vendorId == '2A03' && serialDevice.productId == '0043';
             });
             
             if (listArduinoSerial.length != 1){

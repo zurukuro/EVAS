@@ -26,7 +26,7 @@ $(function() {
 	function initChart() {
 		var context = document.getElementById("chart").getContext("2d");
 		context.canvas.width = 900;
-		context.canvas.height = 400;
+		context.canvas.height = 500;
 		
 		var configuration = {
 			type: 'line',
@@ -102,10 +102,10 @@ $(function() {
 		this.lastIndexTemp = obj.data.length;
 
 		document.getElementById('temp').innerHTML = Math.round(obj.data[obj.data.length - 1]);
-		document.getElementById('temp_1quartil').innerHTML = Math.round(obj.data[obj.data.length - 1]);
-		document.getElementById('temp_3quartil').innerHTML = Math.round(obj.data[obj.data.length * (100) / (100)]);
-		document.getElementById('temp_media').innerHTML = Math.round(obj.data[obj.data.length - 1]);
-		document.getElementById('temp-stroke').setAttribute('stroke-dasharray', Math.round(obj.data[obj.data.length - 1]) * 2 + ', 100');
+		// document.getElementById('temp_1quartil').innerHTML = Math.round(obj.data[obj.data.length - 1]);
+		// document.getElementById('temp_3quartil').innerHTML = Math.round(obj.data[obj.data.length * (100) / (100)]);
+		// document.getElementById('temp_media').innerHTML = Math.round(obj.data[obj.data.length - 1]);
+		document.getElementById('temp-stroke').setAttribute('stroke-dasharray', Math.round(obj.data[obj.data.length - 1])  * 2 + ', 100');
 		
 		if(graficoExiste) {
 			listTemp = obj.data.slice(_lastIndexTemp);
@@ -148,4 +148,6 @@ $(function() {
 			$('#media_details').removeClass('hidden')
 		}
 	});
+	graficoExiste = true;
+	initChart();
 });
