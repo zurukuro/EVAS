@@ -16,8 +16,8 @@ class ArduinoDataRead {
         SerialPort.list().then(listSerialDevices => {
             
             let listArduinoSerial = listSerialDevices.filter(serialDevice => {
-                //return serialDevice.vendorId == 2341 && serialDevice.productId == 43;
-                return serialDevice.vendorId == '2A03' && serialDevice.productId == '0043';
+                return serialDevice.vendorId == 2341 && serialDevice.productId == 43;
+                //return serialDevice.vendorId == '2A03' && serialDevice.productId == '0043';
             });
             
             if (listArduinoSerial.length != 1){
@@ -36,7 +36,7 @@ class ArduinoDataRead {
             arduino.pipe(parser);
             
             parser.on('data', (data) => {
-                //inserirRegistro(data);
+                inserirRegistro(data);
                 this.listData.push(parseFloat(data));
             });
             
@@ -68,13 +68,29 @@ connection.on('connect', function(err) {
 
 
 var Request = require('tedious').Request  
-var TYPES = require('tedious').TYPES;  
+var TYPES = require('tedious').TYPES; 
+var ultimoregistro = Date.now(); 
 
 function inserirRegistro(valor) {  
-    request = new Request("INSERT into tblleitura (temperatura, datatemp) values (@valor, CURRENT_TIMESTAMP);", function(err) {  
-    if (err) {  
-        console.log(err);}  
-    });  
-    request.addParameter('valor', TYPES.Float, valor);  
-    connection.execSql(request);  
+	if (Date.now() - ultimoregistro >= 60 * 10000)
+    {
+        request = new Request("INSERT INTO TBLHISTORICO (TEMPERATURA, DATATEMP) values (@valor, DateAdd(Hour, -3, CURRENT_TIMESTAMP))", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        request.addParameter('valor', TYPES.Float, valor);
+        connection.execSql(request);
+        ultimoregistro = Date.now();
+	}
+	else
+	{
+        request = new Request("UPDATE TBLLEITURA SET LEITURA = @valor, DATATEMP = DateAdd(Hour, -3, CURRENT_TIMESTAMP);", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        request.addParameter('valor', TYPES.Float, valor);
+        connection.execSql(request);
+	}
 }
