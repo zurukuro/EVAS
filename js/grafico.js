@@ -27,8 +27,7 @@ function desenharGrafico() {
             url: 'painel.aspx/TemperaturaAtual',
             data: '{}',
             success: function (response) {
-                if(data.getNumberOfRows() > 10)
-                {
+                if (data.getNumberOfRows() > 10) {
                     data.removeRow(0);
                 }
                 data.addRow([total, response.d]);
