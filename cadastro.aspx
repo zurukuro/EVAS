@@ -39,7 +39,7 @@
                 <section class="register-back">
                     <div class="register-holder">
                         <div class="pass-holder">
-                            <asp:TextBox runat="server" ID="txtCEP" CssClass="input" placeholder="CEP" MaxLength="8" />
+                            <asp:TextBox runat="server" ID="txtCEP" CssClass="input" placeholder="CEP" MaxLength="8" OnTextChanged="txtCEP_TextChanged" />
                             <asp:TextBox runat="server" ID="txtTelefone" CssClass="input" MaxLength="11" placeholder="Telefone com DDD (Somente os número)" />
                         </div>
                         <div>

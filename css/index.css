@@ -1048,6 +1048,25 @@ select.input {
         transition: all 0.2s ease-in-out;
     }
 
+.sair-frutech {
+    padding: 20px 10px;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    border: none !important;
+    background-color: transparent;
+    color: #eee;
+    align-self: center;
+    text-decoration: none;
+    width: 200px;
+}
+
+    .sair-frutech:hover {
+        background-color: #777777;
+        transition: all 0.2s ease-in-out;
+    }
+
 .icon-therm {
     display: inline-block;
     width: 2em;
@@ -1061,6 +1080,7 @@ select.input {
     color: #eee;
     align-self: center;
     margin-left: 20px;
+    text-decoration: none;
 }
 
 .quartil {
