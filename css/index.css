@@ -1649,6 +1649,16 @@ select.input {
   .fruit-list__desc {
     padding: 0 15px;
   }
+
+  .fruit-item:hover input ~ .icon-therm {
+    filter: initial;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .fruit-item:hover input ~ .alface {
+    font-weight: inherit;
+    transition: all 0.1s ease-in-out;
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1100px) {
