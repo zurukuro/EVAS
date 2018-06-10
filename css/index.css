@@ -108,6 +108,13 @@ header {
   padding: 10px 40px;
 }
 
+.btnmobile {
+  font-size: 16px;
+  padding: 14px 44px;
+  display: inline-block;
+  text-decoration: none;
+}
+
 .btn--primary {
   color: #5A1E5C;
   background-color: white;
@@ -210,21 +217,20 @@ canvas {
 
 .nav__item--login {
   list-style: none;
-  padding: .5em;
   border: 1px solid transparent;
   transition: all 0.2s ease-out;
+  background-color: #043565;
 }
 
 .nav__login {
+  display: block;
   text-decoration: none;
   color: white;
   padding: .5em 2em;
-  background-color: #043565;
   transition: all 0.1s ease-out;
 }
 
-.nav__login:hover {
-  color: white;
+.nav__item--login:hover {
   background-color: #006494;
   transition: all 0.1s ease-out;
 }
@@ -308,8 +314,8 @@ canvas {
 }
 
 .features__text--title {
-  font-family: 'Lato','sans-serif';
   font-size: 36px;
+  color: #ffa630;
 }
 
 .features__text--subtitle {
@@ -389,6 +395,10 @@ canvas {
   min-height: 100vh;
 }
 
+.frutech-logo {
+  width: 50px;
+}
+
 .frutech__desc {
   text-align: center;
   padding-top: 190px;
@@ -399,6 +409,7 @@ canvas {
   font-size: 72px;
   font-weight: 700;
   color: #ffa630;
+  font-family: 'Poiret One', cursive;
 }
 
 .frutech__text {
@@ -762,7 +773,7 @@ select.input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 80vw;
-  margin: 8vh auto;
+  margin: 6.5vh auto;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
@@ -773,7 +784,7 @@ select.input {
 
 .register-back {
   display: grid;
-  grid-template-rows: 3fr .5fr;
+  grid-template-rows: 3fr;
   width: 40vw;
 }
 
@@ -781,7 +792,7 @@ select.input {
   box-sizing: border-box;
   width: 100%;
   display: inline-grid;
-  grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: 0.2fr 0.5fr 0.2fr 0.5fr 0.5fr 0.5fr;
   background-color: white;
   padding: 50px 50px 20px 50px;
 }
@@ -819,6 +830,15 @@ select.input {
   background-color: #ff6300;
   text-align: center;
   transition: 0.1s all ease-in;
+  padding: 20px 0;
+  color: white;
+  height: 100%;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  margin: 0 auto;
 }
 
 .btn-signin:hover {
@@ -839,6 +859,12 @@ select.input {
   text-decoration: none;
   color: white;
   height: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  margin: 0 auto;
 }
 
 /* -------------------- Perfil -------------------- */
@@ -1019,11 +1045,19 @@ select.input {
 
 .nome-arduino {
   border-bottom: 1px solid #eee;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   border-radius: 4px;
   padding: 20px 10px;
   display: flex;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  background: none;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .nome-arduino:hover {
@@ -1038,6 +1072,18 @@ select.input {
   stroke-width: 0;
   stroke: currentColor;
   fill: #eee;
+  filter: grayscale(1);
+}
+
+.icon-cross {
+  display: inline-block;
+  width: 1.5em;
+  height: 2em;
+  padding-left: 7px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: #eee;
+  filter: grayscale(1);
 }
 
 .therm-name {
@@ -1111,6 +1157,36 @@ select.input {
 .fruit-item {
   display: flex;
   margin: 10px 0;
+  position: relative;
+}
+
+.fruit-item input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.fruit-item:hover input ~ .icon-therm {
+  filter: grayscale(0);
+  transition: all 0.1s ease-in-out;
+}
+
+.fruit-item:hover input ~ .alface {
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+}
+
+.fruit-item input:checked ~ .icon-therm {
+  filter: grayscale(0);
+  transition: all 0.1s ease-in-out;
+}
+
+.fruit-item input:checked ~ .alface {
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
 }
 
 .grid-fruits {
@@ -1126,6 +1202,10 @@ select.input {
 }
 
 /* -------------------- Footer -------------------- */
+
+.footer-gap {
+  padding: 120px 0;
+}
 
 .footer-area {
   background-color: #222222;
@@ -1167,10 +1247,18 @@ select.input {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 800px) {
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 640px) {
   
   body {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .menuopen {
+    overflow: hidden;
   }
 
   .section-gap {
@@ -1180,6 +1268,7 @@ select.input {
   .btnsquare {
     font-size: 16px;
     padding: 14px 44px;
+    display: inline-block;
   }
 
   .row-center {
@@ -1192,12 +1281,140 @@ select.input {
     min-height: 0.125rem;
   }
 
-  #header {
-    display: none;
+  .mobile-trigger {
+    z-index: 10;
+    color: white;
+    position: relative;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    float: right;
+    margin-right: 20px;
+  }
+  
+  .mobile-trigger--dark {
+    z-index: 10;
+    color: black;
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+  .trigger-btn--1 {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    left: 0;
+    top: 0;
+  }
+
+  .trigger-btn--2 {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    left: 0;
+    top: 50%;
+  }
+
+  .trigger-btn--3 {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    left: 0;
+    top: 100%;
+  }
+
+  .trigger-btn--dark1 {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    left: 0;
+    top: 0;
+  }
+
+  .trigger-btn--dark2 {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    left: 0;
+    top: 50%;
+  }
+
+  .trigger-btn--dark3 {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    left: 0;
+    top: 100%;
+  }
+
+  .header__wrapper {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: -100vw;
+    flex-direction: column;
+    margin: 0;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.92);
+    box-sizing: border-box;
+    padding: 100px 0;
+    transition: left 0.3s ease-in;
+  }
+
+  .header__wrapper.active {
+    left: 0;
+    transition: left 0.3s ease-out;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 63px;
+    margin-bottom: 20px;
+  }
+
+  .nav__list {
+    margin: 0;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav__item {
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .nav__item--login {
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #043565;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .nav__login {
+    padding: 15px 0;
   }
   
   .front-about {
-    min-height: unset;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .front-about__desc {
@@ -1207,7 +1424,7 @@ select.input {
   }
 
   .front-about__title {
-    font-size: 80px;
+    font-size: 72px;
   }
 
   .front-about__text {
@@ -1218,20 +1435,190 @@ select.input {
     padding: 120px 0;
   }
 
+  .features__text--title {
+    margin-bottom: 20px;
+  }
+
   .service_product {
     text-align: center;
   }
 
   .service__img {
-    height: 20%;
+    max-width: 75%;
+    height: auto;
   }
 
   .clients {
     text-align: center;
+    padding-bottom: 80px;
   }
 
   .clients__logo {
-    width: 18%;
-    margin: 0 56px;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .row .clients__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .footer-gap {
+    padding: 80px 0 0 0;
+  }
+
+  .row .footer__area {
+    margin-bottom: 30px;
+  }
+
+  .frutech {
+    min-height: 90vh;
+  }
+
+  .frutech__desc {
+    padding-top: 90px;
+  }
+
+  .frutech__text {
+    padding: 0;
+  }
+
+  .store__img {
+    margin-left: 20%;
+  }
+
+  .img__wrapper::before {
+    width: 100%;
+  }
+
+  .img__wrapper::after {
+    width: 100%;
+  }
+
+  .benefits__salad {
+    width: 100%;
+    height: 300px;
+  }
+
+  .benefits__tomatoes {
+    width: 100%;
+    height: 300px;
+    margin-top: 40px;
+  }
+
+  .benefits__desc {
+    text-align: center;
+  }
+
+  .btn-wrapper {
+    flex-direction: column;
+  }
+
+  .btnmobile {
+    display: flex;
+  }
+
+  .aboutus__desc {
+    padding-top: 90px;
+  }
+
+  .aboutus__title {
+    font-size: 36px;
+  }
+
+  .aboutus__text {
+    padding: 0;
+    border: none;
+  }
+
+  .margin-team {
+    padding: 0;
+  }
+
+  .contactus__desc {
+    padding-top: 90px;
+  }
+
+  .contact__title {
+    font-size: 36px;
+  }
+
+  .contactus__text {
+    padding: 0;
+  }
+
+  .btnenviar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-back {
+    width: auto;
+  }
+  
+  .btn-signin {
+    padding: 0;
+  }
+
+  .cadastro-holder {
+    grid-template-columns: none;
+    width: 90vw;
+  }
+
+  .register-back__left {
+    width: auto;
+  }
+
+  .register-back {
+    width: auto;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    background-color: #4b4b4b;
+    width: 80vw;
+    left: -80vw;
+    position: absolute;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.92);
+    transition: left 0.3s ease-in;
+  }
+
+  .panel.active {
+    left: 0;
+    transition: left 0.3s ease-out;
+  }
+
+  .panel-flex {
+    width: 100%;
+  }
+
+  .chart-gap {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: grid;
+  }
+
+  .grid-quartil {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 20px;
+  }
+
+  .fruit-list__desc {
+    padding: 0 15px;
   }
 }

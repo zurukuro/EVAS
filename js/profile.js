@@ -18,6 +18,12 @@ $(function() {
 		}
 	});
 
+	$('#mobile-trigger').on('click',function (e) {
+		e.preventDefault();
+		$('.panel').toggleClass('active');
+		$('body').toggleClass('menuopen');
+	})
+
 	// var typed = new Typed('.front-about__title', {
 	//     strings: ["First sentence.", "Second sentence."],
 	//     typeSpeed: 30
