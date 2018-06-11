@@ -12,6 +12,7 @@ setInterval(function () {
         data: '{}',
         success: function (response) {
             document.getElementById('tempMin').innerHTML = (Math.round(response.d) + 'ºC');
+            document.getElementById('tempMinMobile').innerHTML = (Math.round(response.d) + 'ºC');
         },
         error: function () {
         }
@@ -30,6 +31,7 @@ setInterval(function () {
         data: '{}',
         success: function (response) {
             document.getElementById('tempQuartil1').innerHTML = (Math.round(response.d) + 'ºC');
+            document.getElementById('tempQuartil1Mobile').innerHTML = (Math.round(response.d) + 'ºC');
         },
         error: function () {
         }
@@ -49,6 +51,7 @@ setInterval(function () {
         data: '{}',
         success: function (response) {
             document.getElementById('tempMediana').innerHTML = (Math.round(response.d) + 'ºC');
+            document.getElementById('tempMedianaMobile').innerHTML = (Math.round(response.d) + 'ºC');
         },
         error: function () {
         }
@@ -68,6 +71,7 @@ setInterval(function () {
         data: '{}',
         success: function (response) {
             document.getElementById('tempMedia').innerHTML = (Math.round(response.d) + 'ºC');
+            document.getElementById('tempMediaMobile').innerHTML = (Math.round(response.d) + 'ºC');
         },
         error: function () {
         }
@@ -86,6 +90,7 @@ setInterval(function () {
         data: '{}',
         success: function (response) {
             document.getElementById('tempQuartil3').innerHTML = (Math.round(response.d) + 'ºC');
+            document.getElementById('tempQuartil3Mobile').innerHTML = (Math.round(response.d) + 'ºC');
         },
         error: function () {
         }
@@ -104,6 +109,7 @@ setInterval(function () {
         data: '{}',
         success: function (response) {
             document.getElementById('tempMax').innerHTML = (Math.round(response.d) + 'ºC');
+            document.getElementById('tempMaxMobile').innerHTML = (Math.round(response.d) + 'ºC');
         },
         error: function () {
         }

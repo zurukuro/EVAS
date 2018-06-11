@@ -4,8 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Cadastro</title>
+    <meta name="viewport" content="user-scaling=no, width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/simple-grid.css" />
     <link rel="stylesheet" href="css/index.css" />
@@ -32,31 +33,29 @@
                             <asp:TextBox runat="server" ID="txtNomeCompleto" CssClass="input" placeholder="NOME COMPLETO" MaxLength="50" />
                         </div>
                         <div>
-                            <asp:TextBox runat="server" ID="txtCPF" CssClass="input" placeholder="CPF (Somente Números)" MaxLength="11" />
+                            <asp:TextBox runat="server" ID="txtCPF" CssClass="input" placeholder="CPF" MaxLength="11" />
                         </div>
                     </div>
                 </section>
                 <section class="register-back">
                     <div class="register-holder">
-                        <div class="pass-holder">
-                            <asp:TextBox runat="server" ID="txtCEP" CssClass="input" placeholder="CEP" MaxLength="8" OnTextChanged="txtCEP_TextChanged" />
-                            <asp:TextBox runat="server" ID="txtTelefone" CssClass="input" MaxLength="11" placeholder="Telefone com DDD (Somente os número)" />
+                        <div>
+                            <asp:TextBox runat="server" ID="txtCEP" CssClass="input" placeholder="CEP" MaxLength="8" OnTextChanged="txtCEP_TextChanged" AutoPostBack="true" />
                         </div>
                         <div>
                             <asp:TextBox runat="server" ID="txtLogradouro" CssClass="input" placeholder="RUA" MaxLength="50" />
                         </div>
                         <div>
-                            <asp:TextBox runat="server" ID="txtBairro" CssClass="input" placeholder="BAIRRO" MaxLength="50" />
+                            <asp:TextBox runat="server" ID="txtBairro" CssClass="input" placeholder="BAIRRO" MaxLength="50" />  
                         </div>
                         <div class="pass-holder">
-                            <asp:TextBox runat="server" ID="txtComplemento" CssClass="input" placeholder="COMPLEMENTO" MaxLength="30" />
-                            <asp:TextBox runat="server" ID="txtNumeroLocal" CssClass="input" placeholder="NÙMERO" MaxLength="20" />
+                            <asp:TextBox runat="server" ID="txtComplemento" CssClass="input" placeholder="COMPLEMENTO" MaxLength="50" />
+                            <asp:TextBox runat="server" ID="txtNumeroLocal" CssClass="input" placeholder="NÚMERO" MaxLength="10" />
                         </div>
                         <div class="pass-holder">
                             <asp:TextBox runat="server" ID="txtCidade" CssClass="input" placeholder="CIDADE" MaxLength="50" />
                             <asp:DropDownList runat="server" ID="ddlUF" CssClass="input">
-                                <asp:ListItem Text="-- Selecione --" />
-                                <asp:ListItem Text="AC" />
+                                <asp:ListItem Text="-- Selecione --"/>
                                 <asp:ListItem Text="AL" />
                                 <asp:ListItem Text="AM" />
                                 <asp:ListItem Text="AP" />
@@ -85,20 +84,20 @@
                                 <asp:ListItem Text="TO" />
                             </asp:DropDownList>
                         </div>
+                        <div class="pass-holder">
+                            <asp:TextBox runat="server" ID="txtDDD" CssClass="input" placeholder="DDD" MaxLength="2" />
+                            <asp:TextBox runat="server" ID="txtTelefone" CssClass="input" placeholder="TELEFONE/CELULAR" MaxLength="9" />
+                        </div>
                     </div>
                     <div class="btn-holder">
                         <div class="btn-register">
-                            <asp:Button Text="VOLTAR" runat="server" ID="btnVoltar" CssClass="btn__link--register" OnClick="btnVoltar_Click" />
+                            <a href="login.aspx" class="btn__link--register">VOLTAR</a>
                         </div>
-                        <div class="btn-signin">
-                            <asp:Button Text="CADASTRAR" runat="server" ID="btnEnviar" CssClass="btn__link--signin" OnClick="btnEnviar_Click" />
-                        </div>
+                        <asp:Button Text="CADASTRAR" runat="server" ID="btnEnviar" CssClass="btn-signin" OnClick="btnEnviar_Click" />
                     </div>
                 </section>
             </div>
         </form>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
 </body>
 </html>
