@@ -36,7 +36,7 @@
                         </svg>
                         <p class="therm-name">Dudu</p>
                     </button>
-                    <asp:Button Text="Sair" runat="server" CssClass="nome-arduino therm-name" ID="btnSair" OnClick="btnSair_Click"/>
+                    <asp:Button Text="Sair" runat="server" CssClass="nome-arduino therm-name" ID="btnSair" OnClick="btnSair_Click" />
                 </section>
                 <section class="quartil">
                     <div class="grid-quartil desktop">

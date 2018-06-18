@@ -41,3 +41,9 @@ function desenharGrafico() {
         });
     }, 1000);
 }
+
+$('#mobile-trigger').on('click', function (e) {
+    e.preventDefault();
+    $('.panel').toggleClass('active');
+    $('body').toggleClass('menuopen');
+})
