@@ -1057,11 +1057,12 @@ select.input {
   border-right: none;
   border-radius: 4px;
   padding: 20px 10px;
+  margin-left: 0px;
   display: flex;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   background: none;
-  width: 100%;
+  width: 110%;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -1182,7 +1183,7 @@ select.input {
   transition: all 0.1s ease-in-out;
 }
 
-.fruit-item input:checked ~ .alface {
+.fruit-item input:checked ~ .alimento {
   font-weight: bold;
   transition: all 0.1s ease-in-out;
 }
@@ -1193,7 +1194,7 @@ select.input {
   grid-template-rows: 50% 50%;
 }
 
-.alface {
+.alimento {
   align-self: center;
   margin-left: 10px;
   display: inline;
