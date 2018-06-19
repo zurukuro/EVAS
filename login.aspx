@@ -28,7 +28,7 @@
                         <asp:TextBox runat="server" ID="txtSenha" CssClass="input" placeholder="SENHA" MaxLength="20" TextMode="Password" />
                     </div>
                     <div class="forgetpass-holder">
-                        <a href="contato.aspx" class="forgetpass__link">Esqueceu sua senha?</a>
+                        <a href="https://devevas.freshdesk.com/support/home" class="forgetpass__link">Esqueceu sua senha?</a>
                     </div>
                 </div>
                 <div class="btn-holder">

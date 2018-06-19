@@ -40,13 +40,13 @@
                 <section class="register-back">
                     <div class="register-holder">
                         <div>
-                            <asp:TextBox runat="server" ID="txtCEP" CssClass="input" placeholder="CEP" MaxLength="8" OnTextChanged="txtCEP_TextChanged" AutoPostBack="true" />
+                            <asp:TextBox runat="server" ID="txtCEP" CssClass="input" placeholder="CEP" MaxLength="8" onkeyup="checarcep(this.value)" />
                         </div>
                         <div>
                             <asp:TextBox runat="server" ID="txtLogradouro" CssClass="input" placeholder="RUA" MaxLength="50" />
                         </div>
                         <div>
-                            <asp:TextBox runat="server" ID="txtBairro" CssClass="input" placeholder="BAIRRO" MaxLength="50" />  
+                            <asp:TextBox runat="server" ID="txtBairro" CssClass="input" placeholder="BAIRRO" MaxLength="50" />
                         </div>
                         <div class="pass-holder">
                             <asp:TextBox runat="server" ID="txtComplemento" CssClass="input" placeholder="COMPLEMENTO" MaxLength="50" />
@@ -55,7 +55,7 @@
                         <div class="pass-holder">
                             <asp:TextBox runat="server" ID="txtCidade" CssClass="input" placeholder="CIDADE" MaxLength="50" />
                             <asp:DropDownList runat="server" ID="ddlUF" CssClass="input">
-                                <asp:ListItem Text="-- Selecione --"/>
+                                <asp:ListItem Text="-- Selecione --" />
                                 <asp:ListItem Text="AL" />
                                 <asp:ListItem Text="AM" />
                                 <asp:ListItem Text="AP" />
@@ -99,5 +99,37 @@
             </div>
         </form>
     </main>
+    <script type="text/javascript">
+        let logr = document.getElementById("txtLogradouro");
+        let cep = document.getElementById("txtCEP");
+        let bairro = document.getElementById("txtBairro");
+        let cidade = document.getElementById("txtCidade");
+        let uf = document.getElementById("ddlUF");
+
+        function ajaxcep(cep) {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange =
+                function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let obj = JSON.parse(this.responseText);
+                        logr.value = obj.logradouro;
+                        cep.value = obj.cep;
+                        bairro.value = obj.bairro;
+                        cidade.value = obj.cidade;
+                        uf.value = obj.uf;
+                    }
+                };
+            xhttp.open("GET", "AjaxSenha.aspx?cep=" + cep, true);
+            xhttp.send();
+        }
+
+        function checarcep(cep) {
+            if (cep.length === 8) {
+                ajaxcep(cep);
+            }
+        }
+    </script>
 </body>
 </html>
+
+
